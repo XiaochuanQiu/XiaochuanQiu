@@ -9,6 +9,29 @@
   <p><strong>Average shop rating:</strong> {{ avg_shop_rating|floatformat:1 }}/5</p>
 {% endif %}
 
+{% if shop.location %}
+<div id="map" style="width:300px; height:300px;"></div>
+<script>
+function initMap() {
+    const geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ address: "{{ shop.location }}" }, function(results, status) {
+        if (status === "OK") {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: results[0].geometry.location,
+            });
+            new google.maps.Marker({
+                position: results[0].geometry.location,
+                map: map,
+                title: "{{ shop.name }}"
+            });
+        }
+    });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=pepepopo&callback=initMap" async defer></script>
+{% endif %}
+
 <h3>Shop reviews</h3>
 <ul>
   {% for review in shop_reviews %}
