@@ -1,0 +1,87 @@
+:root {
+    --coffee-dark: #3e2723;
+    --coffee-primary: #5d4037;
+    --coffee-secondary: #8d6e63;
+    --coffee-light: #d7ccc8;
+    --coffee-cream: #f5f5dc;
+    --coffee-bg: #faf8f5;
+    --coffee-accent: #d08c60;
+}
+
+body {
+    background-color: var(--coffee-bg);
+    color: var(--coffee-dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bg-coffee {
+    background-color: var(--coffee-primary) !important;
+}
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+a {
+    color: var(--coffee-secondary);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--coffee-accent);
+}
+
+.btn-coffee {
+    background-color: var(--coffee-primary);
+    color: white;
+    border: none;
+}
+.btn-coffee:hover {
+    background-color: var(--coffee-dark);
+    color: white;
+}
+.btn-outline-coffee {
+    border-color: var(--coffee-primary);
+    color: var(--coffee-primary);
+}
+.btn-outline-coffee:hover {
+    background-color: var(--coffee-primary);
+    color: white;
+}
+
+.card {
+    border-radius: 10px;
+    border: 1px solid var(--coffee-light);
+    transition: transform 0.2s;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+form p label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+form p input:not([type="checkbox"]):not([type="radio"]), 
+form p select, 
+form p textarea {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    background-color: #fff;
+}
+form p input:focus, form p select:focus, form p textarea:focus {
+    outline: none;
+    border-color: var(--coffee-secondary);
+    box-shadow: 0 0 0 0.2rem rgba(141, 110, 99, 0.25);
+}
+
+.rating-badge {
+    background-color: var(--coffee-accent);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
