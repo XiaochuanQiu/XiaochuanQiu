@@ -27,7 +27,7 @@
         <div class="card-body">
           <h5 class="card-title fw-bold">
             <a
-              href="{% url 'shops:detail' shop.slug %}"
+              href="{% url 'shops:detail' slug=shop.slug %}"
               class="text-decoration-none"
               style="color: var(--coffee-dark)"
               >{{ shop.name }}</a
@@ -71,8 +71,9 @@
           </h5>
           <p class="text-muted mb-2">
             From:
-            <a href="{% url 'shops:detail' drink.shop.slug %}"
-              >{{ drink.shop.name }}</a
+            <a href="{% url 'shops:detail' slug=drink.slug %}"
+            class="text-decoration-none"
+            style="color: var(--coffee-dark)">{{ drink.name }}</a
             >
           </p>
           <p class="card-text mb-1">
@@ -92,7 +93,7 @@
       </div>
     </div>
     {% empty %}
-    <p class="text-muted">No drinks available yet.</p>
+    <p class="text-muted mb-2">From: <a href="{% url 'shops:detail' slug=drink.shop.slug %}">{{ drink.shop.name }}</a></p>
     {% endfor %}
   </div>
 </div>

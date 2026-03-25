@@ -5,11 +5,11 @@
     <div class="card h-100 border-0 shadow-sm">
       <div class="card-body">
         <h5 class="card-title fw-bold">
-          <a href="{% url 'drinks:detail' drink.slug %}">{{ drink.name }}</a>
+          <a href="{% url 'drinks:detail' slug=drink.slug %}">{{ drink.name }}</a>
         </h5>
         <h6 class="card-subtitle mb-2 text-muted">
           <a
-            href="{% url 'shops:detail' drink.shop.slug %}"
+            href="{% url 'shops:detail' slug=drink.shop.slug %}"
             class="text-secondary"
             ><i class="bi bi-shop"></i> {{ drink.shop.name }}</a
           >
